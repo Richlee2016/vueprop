@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        <%= title %>
+    </title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body>
+    <h1>
+        <%= title %>
+    </h1>
+    <div></div>
+</body>
+
+</html>
+<script>
+    var data = {
+        box: 'rich',
+        test: {
+            box: 1,
+            yes: 2
+        }
+    }
+
+
+
+
+    let addSet = (obj) => {
+        for (let key in obj) {
+            let val = obj[key];
+            if () {
+
+            };
+            addSet(val);
+            Object.defineProperty(obj, key, {
+                enumerable: true,
+                configurable: true,
+                get: function() {
+                    return val;
+                },
+                set: function(val) {
+                    addSet(val);
+                }
+            })
+        };
+    }
+
+    addSet(data);
+
+    data.box = 2;
+
+
+
+    console.log(data);
+</script>
